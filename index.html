@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Gravity Zero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast"></div>
+
+<section id="s-menu" class="screen active">
+  <h1>GRAVITY<br><span>ZERO</span></h1>
+  <input id="nick" maxlength="12" placeholder="Seu apelido" autocomplete="off">
+  <button class="btn blue" id="b-online">Modo Online</button>
+  <button class="btn red" id="b-local">Modo Local</button>
+  <p class="hint">Toque em qualquer lugar da tela (celular) ou use ESPAÇO (PC) para inverter a gravidade e saltar para a parede oposta. Desvie dos blocos! No modo local, cada jogador tem uma zona colorida da tela (ou uma tecla).</p>
+</section>
+
+<section id="s-online" class="screen">
+  <h2>Modo Online</h2>
+  <button class="btn blue" id="b-create">Criar sala</button>
+  <div class="or">ou entre com um código</div>
+  <input id="code" maxlength="4" placeholder="CÓDIGO" autocomplete="off" class="big">
+  <button class="btn red" id="b-join">Entrar na sala</button>
+  <button class="btn ghost back">Voltar</button>
+</section>
+
+<section id="s-local" class="screen">
+  <h2>Modo Local</h2>
+  <p>Quantos jogadores? (1 a 6)</p>
+  <div id="nums"></div>
+  <p class="hint" id="keyhint"></p>
+  <button class="btn blue" id="b-play">Jogar</button>
+  <button class="btn ghost back">Voltar</button>
+</section>
+
+<section id="s-lobby" class="screen">
+  <h2>Sala</h2>
+  <div id="roomcode">----</div>
+  <p class="hint">Compartilhe o código (1 a 6 jogadores)</p>
+  <ul id="plist"></ul>
+  <button class="btn red" id="b-copy">Convidar (link)</button>
+  <button class="btn blue" id="b-start">Iniciar</button>
+  <p id="wait" class="hint">Aguardando o host iniciar…</p>
+  <button class="btn ghost back">Sair</button>
+</section>
+
+<section id="s-game" class="screen">
+  <div id="wrap"><canvas id="cv"></canvas></div>
+  <button id="b-exit" aria-label="Sair">✕</button>
+  <div id="zones"></div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.4/peerjs.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
